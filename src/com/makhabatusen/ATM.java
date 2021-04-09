@@ -33,9 +33,8 @@ import java.util.Scanner;
  Function withdraw(withdrawAmount)
     IF (withdrawAmount ≤ totalAvailable ) THEN
         FOR i <- LEN(banknotes) TO 0
-            neededNotesQuantity <- withdrawAmount / banknotes[i]
             IF (quantities[i] > 0) AND (banknotes[i] ≤ withdrawAmount) THEN
-                withdrawNotesCount[i] <- MIN(neededNotesQuantity, quantities[i])
+                withdrawNotesCount[i] <- MIN(withdrawAmount / banknotes[i], quantities[i])
                 availableForWithdraw <- availableForWithdraw + banknotes[i] * withdrawNotesCount[i]
                 totalAvailable <- totalAvailable - withdrawNotesCount[i] * banknotes[i]
                 withdrawAmount <- withdrawAmount - withdrawNotesCount[i] * banknotes[i]
@@ -93,9 +92,8 @@ public class ATM {
     private static void withdraw(int withdrawAmount) {
         if (withdrawAmount <= totalAvailable) {
             for (int i = banknotes.length - 1; i >= 0; i--) {
-                int neededNotesQuantity = withdrawAmount / banknotes[i];
                 if (quantities[i] > 0 && banknotes[i] <= withdrawAmount) {
-                    withdrawNotesCount[i] = Math.min(neededNotesQuantity, quantities[i]);
+                    withdrawNotesCount[i] = Math.min( withdrawAmount / banknotes[i], quantities[i]);
                     availableForWithdraw += banknotes[i] * withdrawNotesCount[i];
                     totalAvailable -= withdrawNotesCount[i] * banknotes[i];
                     withdrawAmount -= withdrawNotesCount[i] * banknotes[i];
