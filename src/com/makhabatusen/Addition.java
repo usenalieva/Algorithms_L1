@@ -10,7 +10,7 @@ n
 
 Function add
     call: userInput()
-    call: addNumbers(n)
+    call: addNumbers()
 EndFunction
 
 Function userInput
@@ -18,7 +18,7 @@ Function userInput
     n <- USERINPUT
 EndFunction
 
-Function addNumbers(n)
+Function addNumbers()
 one <- '1'
 result <- 0
 numbers <- ArrayList
@@ -53,7 +53,7 @@ public class Addition {
 
     public void add() {
         userInput();
-        addNumbers(n);
+        addNumbers();
     }
 
     private static void userInput() {
@@ -62,7 +62,7 @@ public class Addition {
         n = scan.nextInt();
     }
 
-    private void addNumbers(int n) {
+    private void addNumbers() {
         String one = "1";
         long result = 0;
         List<String> numbers = new ArrayList<>();

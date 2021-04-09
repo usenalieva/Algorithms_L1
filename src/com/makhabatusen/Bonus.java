@@ -10,7 +10,7 @@ bonus <- 0
 
 Function calcBonus
     call: userInput()
-    call: calculateBonus(annualWage)
+    call: calculateBonus()
 EndFunction
 
 
@@ -19,7 +19,7 @@ Function calcBonus()
     annualWage <- USERINPUT
 EndFunction
 
-Function calculateBonus(annualWage)
+Function calculateBonus()
    bonus <- bonus + (annualWage * 0.5 * 0.05) + (annualWage * 0.3 * 0.08) + (annualWage * 0.2 * 0.1)
    PRINT 'Your annual bonus is: ' + bonus
 EndFunction
@@ -33,7 +33,7 @@ public class Bonus {
 
     public void calcBonus() {
         userInput();
-        calculateBonus(annualWage);
+        calculateBonus();
     }
 
     private static void userInput() {
@@ -42,7 +42,7 @@ public class Bonus {
         annualWage = scan.nextInt();
     }
 
-    private void calculateBonus(int annualWage) {
+    private void calculateBonus() {
         bonus += (annualWage * 0.5 * 0.05) + (annualWage * 0.3 * 0.08) + (annualWage * 0.2 * 0.1);
         System.out.printf("Your annual bonus is %d%n", bonus);
     }

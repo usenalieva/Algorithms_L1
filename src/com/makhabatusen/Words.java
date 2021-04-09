@@ -8,7 +8,7 @@ input
 
 Function scanWord
     call: userInput()
-    call: scan(input)
+    call: scan()
 EndFunction
 
 Function userInput()
@@ -17,7 +17,7 @@ Function userInput()
 EndFunction
 
 
-Function scan(input)
+Function scan()
     IF (LEN('input') ≤ 2) THEN
         PRINT 'input'
     ELSEIF  (LEN('input') MOD 2) = 0 THEN
@@ -35,7 +35,7 @@ public class Words {
 
     public void scanWord() {
         userInput();
-        scan(input);
+        scan();
     }
 
     private static void userInput() {
@@ -44,7 +44,7 @@ public class Words {
         input = scan.nextLine();
     }
 
-    private void scan(String input) {
+    private void scan() {
         if (input.length() <= 2)
             System.out.println(input);
         else if (input.length() % 2 == 0) {
